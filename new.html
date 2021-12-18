@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        .flex-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 250px;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+    <h2>Hello 123</h2>
+    <button onclick="play()">Log out</button>
+    <p id="sho"></p>
+    </div>
+    <script>
+        function play(){
+            const myTimeout = setTimeout(myGreeting, 2000);
+            document.getElementById("sho").innerText="Logging you Out...";
+            document.getElementById("sho").style.color="red";
+            function myGreeting(){
+            localStorage.setItem("status","logout");
+            window.location.href = "login.html";
+            }
+        }
+        if(localStorage.getItem("status")==="logout"){
+            window.history.forward();
+                function noBack() {
+            window.history.forward();
+            }
+            }
+            else{
+                ;
+            }
+    </script>
+</body>
+</html>
